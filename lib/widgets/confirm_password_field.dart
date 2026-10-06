@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../utils/validators.dart';
 
-class ConfirmPasswordField extends StatelessWidget {
+class ConfirmPasswordField extends StatefulWidget {
   final TextEditingController controller;
   final TextEditingController passwordController;
 
@@ -12,17 +13,28 @@ class ConfirmPasswordField extends StatelessWidget {
   });
 
   @override
+  State<ConfirmPasswordField> createState() => _ConfirmPasswordFieldState();
+}
+
+class _ConfirmPasswordFieldState extends State<ConfirmPasswordField> {
+  bool _obscure = true;
+
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
-      obscureText: true,
-      decoration: const InputDecoration(
+      controller: widget.controller,
+      obscureText: _obscure,
+      decoration: InputDecoration(
         labelText: 'Confirmar contraseña',
-        border: OutlineInputBorder(),
+        prefixIcon: const Icon(Icons.lock_reset),
+        suffixIcon: IconButton(
+          icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off),
+          onPressed: () => setState(() => _obscure = !_obscure),
+        ),
       ),
       validator: (value) => Validators.confirmPasswordValidator(
         value,
-        passwordController.text,
+        widget.passwordController.text,
       ),
     );
   }

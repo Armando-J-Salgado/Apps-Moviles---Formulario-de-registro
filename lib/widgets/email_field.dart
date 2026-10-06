@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class EmailField extends StatelessWidget {
   final TextEditingController controller;
 
-  const EmailField({
-    super.key,
-    required this.controller,
-  });
+  const EmailField({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +12,7 @@ class EmailField extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
         labelText: 'Correo electrónico',
-        border: OutlineInputBorder(),
+        prefixIcon: Icon(Icons.email_outlined),
       ),
       validator: (value) {
         if (value == null || value.trim().isEmpty) {

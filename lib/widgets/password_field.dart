@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../utils/validators.dart';
 
 class PasswordField extends StatefulWidget {
@@ -21,8 +22,7 @@ class _PasswordFieldState extends State<PasswordField> {
       keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
         labelText: 'Contraseña',
-        prefixIcon: const Icon(Icons.lock),
-        border: const OutlineInputBorder(),
+        prefixIcon: const Icon(Icons.lock_outline),
         suffixIcon: IconButton(
           icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off),
           onPressed: () => setState(() => _obscure = !_obscure),

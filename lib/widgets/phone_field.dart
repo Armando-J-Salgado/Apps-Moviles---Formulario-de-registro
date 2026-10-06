@@ -16,9 +16,14 @@ class PhoneField extends StatelessWidget {
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       decoration: const InputDecoration(
         labelText: 'Teléfono',
-        counterText: '',
-        border: OutlineInputBorder(),
+        prefixIcon: Icon(Icons.phone_outlined),
       ),
+      buildCounter: (
+        context, {
+        required currentLength,
+        required isFocused,
+        maxLength,
+      }) => null,
       validator: Validators.phoneValidator,
     );
   }
