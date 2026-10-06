@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:formulario_registro/widgets/confirm_password_field.dart';
 import 'package:formulario_registro/widgets/name_field.dart';
+import 'package:formulario_registro/widgets/phone_field.dart';
 import '../widgets/email_field.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
-  final TextEditingController phoneField = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
 
   @override
@@ -31,7 +32,8 @@ class RegisterScreen extends StatelessWidget {
               EmailField(controller: emailController),
               // PasswordField(),
               ConfirmPasswordField(controller: confirmPasswordController, passwordController: passwordController,),
-              // PhoneField(),
+              PhoneField(controller: phoneController,),
+              
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
