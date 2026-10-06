@@ -28,7 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
           onPressed: () => setState(() => _obscure = !_obscure),
         ),
       ),
-      validator: validatePassword,
+      validator: Validators.passwordValidator,
     );
   }
 }

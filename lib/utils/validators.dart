@@ -11,6 +11,18 @@ class Validators {
     return null;
   }
 
+    static String? passwordValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Ingrese su contraseña';
+    }
+
+    if (value.length < 8) {
+      return 'Mínimo 8 caracteres';
+    }
+
+    return null;
+  }
+
   static String? confirmPasswordValidator(String? value, String password) {
     if (value == null || value.isEmpty) {
       return 'Confirme su contraseña';
