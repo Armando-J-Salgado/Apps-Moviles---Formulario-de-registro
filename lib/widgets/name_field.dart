@@ -18,6 +18,7 @@ class NameField extends StatelessWidget {
         border: OutlineInputBorder(),
       ),
       validator: Validators.nameValidator,
+      autovalidateMode: AutovalidateMode.onUserInteractionIfError,
     );
   }
 }
