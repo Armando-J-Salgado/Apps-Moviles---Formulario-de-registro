@@ -33,10 +33,12 @@ class RegisterScreen extends StatelessWidget {
               EmailField(controller: emailController),
               const SizedBox(height: 16),
               PasswordField(controller: passwordController),
-              // PasswordField(),
+              const SizedBox(height: 16),
               ConfirmPasswordField(controller: confirmPasswordController, passwordController: passwordController,),
+              const SizedBox(height: 16),
               PhoneField(controller: phoneController,),
-              
+              const SizedBox(height: 16),
+
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
