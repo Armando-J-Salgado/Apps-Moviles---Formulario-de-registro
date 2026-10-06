@@ -3,6 +3,7 @@ import 'package:formulario_registro/widgets/confirm_password_field.dart';
 import 'package:formulario_registro/widgets/name_field.dart';
 import 'package:formulario_registro/widgets/phone_field.dart';
 import '../widgets/email_field.dart';
+import '../widgets/password_field.dart'; 
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -30,6 +31,8 @@ class RegisterScreen extends StatelessWidget {
               NameField(controller: nameController,),
               const SizedBox(height: 16),
               EmailField(controller: emailController),
+              const SizedBox(height: 16),
+              PasswordField(controller: passwordController),
               // PasswordField(),
               ConfirmPasswordField(controller: confirmPasswordController, passwordController: passwordController,),
               PhoneField(controller: phoneController,),
