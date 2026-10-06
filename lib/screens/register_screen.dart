@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:formulario_registro/widgets/name_field.dart';
+import '../widgets/email_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,8 @@ class RegisterScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 10),
               NameField(controller: nameController,),
-              // EmailField(),
+              const SizedBox(height: 16),
+              EmailField(controller: emailController),
               // PasswordField(),
               // ConfirmPasswordField(),
               // PhoneField(),
