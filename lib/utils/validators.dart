@@ -22,4 +22,16 @@ class Validators {
 
     return null;
   }
+
+  static String? phoneValidator(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Ingrese su teléfono';
+    }
+
+    if (value.trim().length < 8) {
+      return 'Teléfono inválido';
+    }
+
+    return null;
+  }
 }
