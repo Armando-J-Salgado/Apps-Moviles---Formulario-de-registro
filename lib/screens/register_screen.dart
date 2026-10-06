@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:formulario_registro/widgets/confirm_password_field.dart';
 import 'package:formulario_registro/widgets/name_field.dart';
 import '../widgets/email_field.dart';
 
@@ -29,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(height: 16),
               EmailField(controller: emailController),
               // PasswordField(),
-              // ConfirmPasswordField(),
+              ConfirmPasswordField(controller: confirmPasswordController, passwordController: passwordController,),
               // PhoneField(),
               ElevatedButton(
                 onPressed: () {
