@@ -10,4 +10,16 @@ class Validators {
 
     return null;
   }
+
+  static String? confirmPasswordValidator(String? value, String password) {
+    if (value == null || value.isEmpty) {
+      return 'Confirme su contraseña';
+    }
+
+    if (value != password) {
+      return 'Las contraseñas no coinciden';
+    }
+
+    return null;
+  }
 }
